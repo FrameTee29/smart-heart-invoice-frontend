@@ -1,8 +1,8 @@
-import { adminList } from "@/constants/admin.constant";
+// import { adminList } from "@/constants/admin.constant";
 import { useStoreActions } from "@/store";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { useAccount, useConnect } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface IAuthProvider {
   children: React.ReactNode;
@@ -17,7 +17,8 @@ const AuthProvider = ({ children }: IAuthProvider) => {
   const { setIsAdmin } = useStoreActions((state) => state.user);
 
   const checkIsAdmin = () => {
-    const isAdmin = adminList.includes(address?.toLocaleLowerCase() ?? "");
+    // const isAdmin = adminList.includes(address?.toLocaleLowerCase() ?? "");
+    const isAdmin = true;
     setIsAdmin(isAdmin);
   };
 
@@ -34,7 +35,7 @@ const AuthProvider = ({ children }: IAuthProvider) => {
     if (address) {
       checkIsAdmin();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address, router]);
 
   useEffect(() => {

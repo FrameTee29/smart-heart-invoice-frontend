@@ -551,6 +551,8 @@ const CreateInvoicePage = () => {
                         aria-label="Go to previous page"
                         variant="outline"
                         className="px-6 bg-ghost text-foreground h-10 mr-2"
+                        type="button"
+                        onClick={() => router.push("/admin")}
                       >
                         Cancel
                       </Button>

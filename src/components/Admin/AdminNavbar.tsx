@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { HistoryIcon, ListIcon, PlusIcon, WalletIcon } from "lucide-react";
+import {
+  HistoryIcon,
+  ListIcon,
+  PlusIcon,
+  UserCircleIcon,
+  WalletIcon,
+} from "lucide-react";
 
 const AdminNavbar = () => {
   const adminMenu = [
@@ -16,7 +22,12 @@ const AdminNavbar = () => {
       variant: "menuOutline",
       icon: <PlusIcon className="w-[20px]" />,
     },
-
+    {
+      slug: "/admin/create-customer",
+      label: "Create Customer",
+      variant: "menuOutline",
+      icon: <UserCircleIcon className="w-[20px]" />,
+    },
     {
       slug: "/admin/claim/history",
       label: "Claim Automation History",
